@@ -8,20 +8,18 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "/professor")
 @Entity
-
+@Table(name = "/professor")
 public class Professor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    @Column(name = "nome", unique = true)
     private String nome;
 
-    @Column(name = "senha")
-    private String senha;
+    @Column(unique = true)
+    private String email;
 
+    private String password;
 }
-
